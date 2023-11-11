@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>The man who moved a mountain</h1>
+    </header>
+    <main>
+       <nav> <h1>Chapter 1</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `In the heart of a bustling city, where skyscrapers touched the clouds and the streets buzzed with the rhythm of progress, lived a young artist named Alex. Despite being surrounded by the vibrant energy of the city, Alex found themselves trapped in a creative rut. The once-inspiring cityscape had become a monotonous backdrop.
+
+One day, as Alex wandered through the city's labyrinth of streets, they stumbled upon an old bookstore tucked away in a quiet corner. Intrigued, Alex entered the shop, where the air was thick with the scent of aged paper and the soft murmur of turning pages.
+
+Behind the counter stood an elderly bookstore owner, who greeted Alex with a knowing smile. "Ah, a seeker of inspiration, are you not?"
+
+Alex, surprised by the accuracy of the assumption, nodded hesitantly.
+
+The bookstore owner beckoned them closer. "I have something special for you," he said, reaching for a dusty tome on the highest shelf.
+
+The book was titled "The Gallery of Dreams," and its pages were filled with stories of artists who had overcome creative blockages and found inspiration in unexpected places. Each tale painted a vivid picture of perseverance, passion, and the magic that happens when one opens their heart to the world.
+
+Eager to absorb the wisdom within, Alex purchased the book and spent the next few days engrossed in its pages. Inspired by the stories, Alex decided to embark on a quest to create a masterpiece that would capture the essence of the city's soul.
+
+Venturing into the city with newfound purpose, Alex explored hidden alleyways, observed the dance of city lights, and listened to the symphony of urban sounds. Along the way, they encountered street performers, wise mentors, and fellow artists who shared their own tales of overcoming creative hurdles.
+
+As the days passed, Alex's canvas transformed into a masterpiece that embodied the spirit of the city—a tapestry of dreams, challenges, and the indomitable human spirit. The once-muted colors now burst with life, and the canvas radiated an energy that resonated with everyone who beheld it.
+
+Word of Alex's creation spread throughout the city, drawing people from all walks of life to witness the magical portrayal of their shared home. The artwork became a symbol of inspiration, reminding everyone that creativity could be found in the ordinary, and that the city itself was a canvas waiting to be painted with the strokes of individual dreams.
+
+In the end, Alex realized that the true gallery of dreams was not confined to the pages of a book or the strokes of a brush but existed in the world around them. The city, once seen as mundane, had become a boundless well of inspiration, and Alex's journey had transformed not only their art but also their perspective on life.
+
+And so, the artist continued to create, fueled by the endless possibilities that lay hidden in the tapestry of the city's ever-evolving story.`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
